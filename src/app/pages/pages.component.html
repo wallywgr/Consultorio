@@ -61,7 +61,21 @@
                                                 <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
                                         </div>
                                     </li> -->
-                                <li>
+                                    <li *ngFor="let item of pacientesService.menu">
+                                        <a class="waves-effect waves-dark" href="#" aria-expanded="false">
+                                            <i [class]="item.icono"></i><span class="hide-menu">{{item.titulo}} </span>
+                                        </a>
+                                        <ul aria-expanded="false">
+                                            <li *ngFor="let subitem of item.submenu">
+                                                <a 
+                                                [routerLink]="subitem.url"
+                                                routerLinkActive="active"
+                                                [routerLinkActiveOptions]="{exact:true}"
+                                                >{{subitem.titulo}} </a></li>
+                                            
+                                        </ul>
+                                    </li>
+                                    <!--<li>
                                     <a class="waves-effect waves-dark" aria-expanded="false">
                                         <i></i>
                                         <span class="hide-menu"></span>
@@ -71,10 +85,10 @@
                                             <a></a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li>-->
 
                                 <li role="separator" class="divider"></li>
-                                <li><a class="cursor"><i class="fa fa-power-off"></i>Salir</a></li>
+                                <li><a class="cursor" (click)="logout();"><i class="fa fa-power-off"></i>Salir</a></li>
                                 <!--<li role="separator" class="divider"></li>
                                     <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
                                     <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
@@ -102,7 +116,7 @@
             <!-- Sidebar navigation-->
             <nav class="sidebar-nav">
                 <ul id="sidebarnav">
-                    <li class="user-profile">
+                    <!--<li class="user-profile">
                         <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><img
                                 src="../assets/assets/images/users/profile.png" alt="user" /><span
                                 class="hide-menu"></span></a>
@@ -110,9 +124,9 @@
                             <li><a href="javascript:void()">Mi perfil </a></li>
                             <li><a href="javascript:void()">Logout</a></li>
                         </ul>
-                    </li>
+                    </li>-->
                     <li class="nav-devider"></li>
-                    <li class="nav-small-cap">Indicadores</li>
+                    <!--<li class="nav-small-cap">Indicadores</li>-->
                     <li *ngFor="let item of pacientesService.menu">
                         <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                             <i [class]="item.icono"></i><span class="hide-menu">{{item.titulo}} </span>
@@ -127,7 +141,7 @@
                             
                         </ul>
                     </li>
-                    <li>
+                    <!--<li>
                         <a class="has-arrow waves-effect waves-dark" aria-expanded="false">
                             <i></i>
                             <span class="hide-menu"></span>
@@ -137,10 +151,10 @@
                                 <a></a>
                             </li>
                         </ul>
-                    </li>
+                    </li>-->
 
-                    <li role="separator" class="divider"></li>
-                    <li><a class="cursor"><i class="fa fa-power-off"></i>Salir</a></li>
+                    <li class="nav-devider"></li>
+                    <li><a class="cursor" (click)="logout();"><i class="fa fa-power-off"></i>Salir</a></li>
                     <!--<li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Apps</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="app-calendar.html">Calendar</a></li>

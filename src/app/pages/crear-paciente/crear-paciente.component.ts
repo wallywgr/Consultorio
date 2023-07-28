@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PacientesService } from 'src/app/services/pacientes.service';
 
 @Component({
   selector: 'app-crear-paciente',
@@ -6,5 +7,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./crear-paciente.component.css']
 })
 export class CrearPacienteComponent {
+  pacientes:any={};
 
+  constructor(public pacientesService: PacientesService){}
+
+  altaPaciente(){
+
+    let formData = new FormData();
+    formData.append('nompaciente','this.pacientes.nompaciente');
+    formData.append('edadpaciente','this.pacientes.edadpaciente');
+    formData.append('telpaciente','this.pacientes.telpaciente');
+    formData.append('dirpaciente','this.pacientes.dirpaciente');
+
+    this.pacientesService.postMethod('AltaPaciente.php', formData).subscribe((event:any)=>{
+      console.log(event);
+      if(event.status == 'success'){
+        
+      }
+    })
+  
+}
 }
