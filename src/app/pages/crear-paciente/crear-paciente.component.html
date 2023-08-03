@@ -3,15 +3,15 @@
     <!-- Container fluid  -->
     <!-- ============================================================== -->
     <div class="container-fluid animated fadeIn">
-    <!-- ============================================================== -->
-    <!-- Bread crumb and right sidebar toggle -->
-    <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
         <div class="row page-titles">
             <div class="col-md-5 align-self-center">
                 <h3 class="text-themecolor">Registrar paciente</h3>
             </div>
             <div class="">
-                
+
             </div>
         </div>
         <div class="row">
@@ -19,51 +19,62 @@
                 <div class="card">
 
                     <div class="card-body">
-                            <div class="form-body">
-                                <h3 class="card-title">Solicitud de datos del Paciente</h3>
-                                <hr>
-                                <div class="row p-t-20">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">Nombre Completo</label>
-                                            <input type="text" class="form-control"  placeholder="Nombre Completo">
-                                        </div>
+                        <div class="form-body">
+                            <h3 class="card-title">Datos del Paciente</h3>
+                            <hr>
+                            <div class="row p-t-20">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Apellido</label>
+                                        <input type="text" class="form-control" name="apepaciente"
+                                            [(ngModel)]="pacientes.apepaciente" placeholder="Apellido">
                                     </div>
-                                    <!--/span-->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">Edad</label>
-                                            <input type="text" class="form-control"  placeholder="Edad">
-                                        </div>
-                                    </div>
-                                    <!--/span-->
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Nombre</label>
+                                        <input type="text" class="form-control" name="nompaciente"
+                                            [(ngModel)]="pacientes.nompaciente" placeholder="Nombre">
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label class="control-label">Edad</label>
+                                        <input type="text" class="form-control" name="edadpaciente"
+                                            [(ngModel)]="pacientes.edadpaciente" placeholder="Edad">
+                                    </div>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        <label>Teléfono</label>
+                                        <input type="text" class="form-control" name="telpaciente"
+                                            [(ngModel)]="pacientes.telpaciente" placeholder="(999) 999-9999">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Domicilio</label>
+                                        <input type="text" class="form-control" name="dirpaciente"
+                                            [(ngModel)]="pacientes.dirpaciente" placeholder="Domicilio">
+                                    </div>
+                                </div>
+
                                 <!--/row-->
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Teléfono</label>
-                                            <input type="text"  class="form-control"  placeholder="(999) 999-9999">
-                                        </div>
-                                    </div>
-                                    <!--/span-->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">Domicilio</label>
-                                            <input type="text" class="form-control"  placeholder="Domicilio">
-                                        </div>
-                                    </div>
-                                    <!--/span-->
-                                </div>
-                                <!--/row-->                                        
                             </div>
                             <div class="form-actions">
-                                <button  class="btn btn-success" > <i class="fa fa-check"></i> Guardar </button> 
+                                <button type="button" class="btn btn-success" (click)="altaPaciente();"> <i
+                                        class="fa fa-check"></i> Guardar </button>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-            <!-- Row -->
+        <!-- Row -->
     </div>
-</div>   
+</div>
